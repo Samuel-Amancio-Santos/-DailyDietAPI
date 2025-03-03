@@ -5,6 +5,7 @@
 <p align="center">
   <img src="https://img.shields.io/static/v1?label=Rocketseat&message=Education&color=8257e5&labelColor=202024" alt="Rocketseat Project" />
   <a href="LICENSE"><img  src="https://img.shields.io/static/v1?label=License&message=MIT&color=8257e5&labelColor=202024" alt="License"></a>
+  Deploy da aplicação https://dailydietapi-mqiy.onrender.com
 </p>
 
 ### Regras da aplicação
