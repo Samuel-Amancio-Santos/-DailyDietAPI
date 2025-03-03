@@ -73,14 +73,14 @@ export async function mealsRoutes(app: FastifyInstance) {
   app.get('/:id', async (request, reply) => {
     const id = await checkReqParams(request, reply)
 
-    const expecifcMeal = await knex('meals')
+    const specificMeal = await knex('meals')
       .where({
         user_id: request.user?.id,
         id,
       })
-      .first()
+      .select('nameOfMeal', 'describe', 'isInDiet', 'date')
 
-    return { expecifcMeal }
+    return { specificMeal }
   })
 
   app.get('/metrics', async (request) => {
@@ -108,7 +108,7 @@ export async function mealsRoutes(app: FastifyInstance) {
     const mealsFalseCount = mealsFalse?.total ?? 0
 
     const metricsPorcent = parseFloat(
-      ((mealsTotalResult / mealsTrueCount) * 100).toFixed(),
+      ((mealsTrueCount / mealsTotalResult) * 100).toFixed(),
     )
 
     const sequence: number = await bestSequence(request)

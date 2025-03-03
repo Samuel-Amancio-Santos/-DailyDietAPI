@@ -6,7 +6,8 @@
     "dev": "tsx watch src/server.ts",
     "knex": "knex",
     "lint": "eslint src --ext .ts --fix",
-    "test": "vitest"
+    "build": "tsup src --out-dir build",
+    "test": "vitest --testTimeout=0"
   },
   "keywords": [],
   "author": "",
@@ -17,6 +18,7 @@
     "@types/node": "^22.13.5",
     "eslint": "^8.57.1",
     "supertest": "^7.0.0",
+    "tsup": "^8.4.0",
     "tsx": "^4.19.3",
     "typescript": "^5.7.3",
     "vitest": "^3.0.7"
