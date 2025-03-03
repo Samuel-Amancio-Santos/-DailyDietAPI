@@ -3,11 +3,7 @@ import type { Knex } from 'knex'
 export async function up(knex: Knex): Promise<void> {
   await knex.schema.createTable('metricsOfUsers', (table) => {
     table.uuid('id').primary()
-    table
-      .string('user_id')
-      .references('id')
-      .inTable('users')
-      .onDelete('CASCADE')
+    table.uuid('user_id').references('id').inTable('users').onDelete('CASCADE')
     table.integer('meals_total')
     table.integer('meals_true_count')
     table.integer('meals_false_count')
